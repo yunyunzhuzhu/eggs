@@ -42,8 +42,8 @@ function draw() {
         textFont(happy);
 
         fill('#f1f2e5');
-        textSize(20);
-        text('Yunzhu \'s Egg House', 300, 20);
+        // textSize(20);
+        // text('Yunzhu \'s Egg House', 300, 20);
         if (parent.document.getElementById("start").innerHTML === "start") {
             player.move();
             b.move();
