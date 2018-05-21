@@ -113,7 +113,7 @@ var emotionData = ec.getBlank();
 
 /************ d3 code for barchart *****************/
 
-var margin = {top: 20, right: 20, bottom: 10, left: 40},
+var margin = {top: 20, right: 20, bottom: 10, left: 20},
     width = 400 - margin.left - margin.right,
     height = 100 - margin.top - margin.bottom;
 

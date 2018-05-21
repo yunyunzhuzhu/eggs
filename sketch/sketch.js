@@ -1,4 +1,3 @@
-//by yunzhu
 var player;
 var blocks = [];
 var b;
@@ -8,8 +7,8 @@ var sad;
 var surprised;
 var happiness;
 
-// var coins;
-// var score=0;
+var coins;
+var score=0;
 
 
 function preload() {
@@ -19,8 +18,8 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(900, 600);
-    // song2.play();
+    createCanvas(windowWidth, windowHeight);
+    song2.play();
     // coins = new Group();
 
     player = new Player();
@@ -33,7 +32,7 @@ function setup() {
 
 function draw() {
     background("lightblue");
-    angry = parent.document.getElementById("angry").innerHTML
+    angry = parent.document.getElementById("angry").innerHTML 
     sad = parent.document.getElementById("sad").innerHTML
     surprised = parent.document.getElementById("surprised").innerHTML
     happiness = parent.document.getElementById("happy").innerHTML
@@ -42,8 +41,8 @@ function draw() {
         textFont(happy);
 
         fill('#f1f2e5');
-        // textSize(20);
-        // text('Yunzhu \'s Egg House', 300, 20);
+        textSize(20);
+        text('EMOTION EGG HOUSE', 300, 20);
         if (parent.document.getElementById("start").innerHTML === "start") {
             player.move();
             b.move();
@@ -56,7 +55,9 @@ function draw() {
                 b.vy = -b.vy;
                 blocks.splice(i, 1);
                 // coins.add(c);
-                // song1.play();
+                song1.play();
+                score = score + 1;
+                //showScore( score );
             }
         }
         if (b.collision(player))
@@ -66,7 +67,8 @@ function draw() {
         b.show();
 
         if (blocks.length > 0) {
-            // text(score, width/2, height/2);
+            showScore( score );
+//              text(score, width/2, height/2);
         }
         else {
             text("you win!", width / 2, height / 2);
@@ -92,11 +94,15 @@ function draw() {
     }
 }
 
+function showScore(x){
+    text('SCORE: '+x, 100, 20);
+    //alert(x);
+}
 
 function mousePressed() {
-    // if((mouseX <= 423) && (mouseX >= 263) && (mouseY <= 355) && (mouseY >= 300)){
+    if((mouseX <= 523) && (mouseX >= 363) && (mouseY <= 455) && (mouseY >= 400)){
     reset();
-    // }
+     }
 }
 
 function reset() {
